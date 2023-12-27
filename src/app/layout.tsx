@@ -16,7 +16,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className='flex h-20 bg-yellow-300 p-5 top-0'>
+          <h1 className='p-2 text-2xl text-white font-semibold'>App Meli</h1>
+          <form action='/items'
+            className="m-auto flex flex-1 gap-3 max-w-screen-xl">
+            <input type='search' name='search' className="h-10 flex-1 px-2 p-2 rounded-xl text-black" placeholder='Buscar productos Marcas y mas...' />
+            <button type='submit'  className="h-10 px-3 bg-gray-900 rounded-xl text-white"> Buscar </button>
+          </form>
+        </header>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
